@@ -41,6 +41,17 @@ func (bd *PhCompany) SetId(id string) {
 }
 
 /*------------------------------------------------
+ * relationships interface
+ *------------------------------------------------*/
+func (bd PhCompany) SetConnect(tag string, v interface{}) interface{} {
+	return bd
+}
+
+func (bd PhCompany) QueryConnect(tag string) interface{} {
+	return bd
+}
+
+/*------------------------------------------------
  * mongo interface
  *------------------------------------------------*/
 

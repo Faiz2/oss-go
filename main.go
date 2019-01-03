@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 	"oss-go/auth"
+	"oss-go/common"
 	"oss-go/company"
 	authfind "oss-go/logicpipe/authbricks/find"
 	others "oss-go/logicpipe/authbricks/others"
@@ -14,7 +15,6 @@ import (
 	"github.com/alfredyang1986/blackmirror/bmcommon/bmsingleton"
 	"github.com/alfredyang1986/blackmirror/bmerror"
 	"github.com/alfredyang1986/blackmirror/bmmodel/request"
-	"github.com/alfredyang1986/blackmirror/bmrouter"
 )
 
 func main() {
@@ -42,7 +42,8 @@ func main() {
 
 	fac.RegisterModel("PhAuthGenerateToken", &others.PhAuthGenerateToken{})
 
-	r := bmrouter.BindRouter()
+	// r := bmrouter.BindRouter()
+	r := common.Router()
 
 	var once sync.Once
 	var bmRouter bmconfig.BMRouterConfig
